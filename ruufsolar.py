@@ -70,14 +70,14 @@ def bloquear_orillas_triangulo(matrix: list[list[int]], x:int, h:int) -> None:
 def max_paneles_triangulo(a:int, b:int, x:int, h:int) -> int:
     matrix = [[0 for _ in range(x)] for _ in range(h)]
     bloquear_orillas_triangulo(matrix, x, h)
-    print(representacion_matrix(matrix))
+    #print(representacion_matrix(matrix))
     return max_cantidad_paneles_solares(a, b, x, h, matrix, 0)
 
 
 if __name__ == "__main__":
-    #print(f"Maxima cantidad de paneles de 1x2 en un techo de 2x4 es: {max_cantidad_paneles_solares(1, 2, 2, 4)}") 
-    #print(f"Maxima cantidad de paneles de 1x2 en un techo de 3x5 es: {max_cantidad_paneles_solares(1, 2, 3, 5)}") 
-    #print(f"Maxima cantidad de paneles de 2x2 en un techo de 1x10 es: {max_cantidad_paneles_solares(2, 2, 1, 10)}") 
+    print(f"Maxima cantidad de paneles de 1x2 en un techo de 2x4 es: {max_cantidad_paneles_solares(1, 2, 2, 4)}") 
+    print(f"Maxima cantidad de paneles de 1x2 en un techo de 3x5 es: {max_cantidad_paneles_solares(1, 2, 3, 5)}") 
+    print(f"Maxima cantidad de paneles de 2x2 en un techo de 1x10 es: {max_cantidad_paneles_solares(2, 2, 1, 10)}") 
 
     print(f"Maxima cantidad de paneles de 1x2 en un techo de ancho 5 y alto 3: {max_paneles_triangulo(1,2,5,3)}")
     print(f"Maxima cantidad de paneles de 1x2 en un techo de ancho 6 y alto 3: {max_paneles_triangulo(1,2,6,3)}")
