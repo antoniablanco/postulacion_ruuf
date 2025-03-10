@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Spinner, Alert, ListGroup } from "react-bootstrap";
+import { Spinner, Alert } from "react-bootstrap";
 
+import ListGroup from "./ListGroup";
 interface User {
   id: number;
   name: string;
@@ -15,7 +16,9 @@ const UserList: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users"
+        );
         if (!response.ok) {
           throw new Error("Error al obtener los datos");
         }
@@ -31,17 +34,15 @@ const UserList: React.FC = () => {
     fetchUsers();
   }, []);
 
-  if (loading) return <Spinner animation="border" className="d-block mx-auto" />;
+  if (loading)
+    return <Spinner animation="border" className="d-block mx-auto" />;
   if (error) return <Alert variant="danger">{error}</Alert>;
 
   return (
-    <ListGroup>
-      {users.map((user) => (
-        <ListGroup.Item key={user.id}>
-          <strong>{user.name}</strong> - {user.email}
-        </ListGroup.Item>
-      ))}
-    </ListGroup>
+    <ListGroup
+      items={users.map((user) => `${user.id} - ${user.name} (${user.email})`)}
+      heading="Lista de Usuarios"
+    />
   );
 };
 

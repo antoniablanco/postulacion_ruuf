@@ -1,23 +1,39 @@
-nav {
-    background-color: #bb6ab2;
-    padding: 16px;
+/* Navbar */
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* ✅ Espaciado entre elementos */
     align-items: center;
-    gap: 20px;
+    background-color: #007bff;
+    padding: 16px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-nav a {
-    color: rgb(29, 1, 33);
+  /* Enlaces del navbar */
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
     border-radius: 5px;
     transition: background 0.3s ease;
-}
-
-nav a:hover {
-    background-color: rgba(91, 9, 93, 0.2);
-}
+  }
+  
+  .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Avatar del usuario */
+  .navbar-avatar {
+    width: 40px;  /* ✅ Tamaño pequeño */
+    height: 40px;
+    border-radius: 50%;  /* ✅ Imagen redonda */
+    object-fit: cover;  /* ✅ Asegura que la imagen no se deforme */
+    margin-left: auto;  /* ✅ Empuja la imagen a la derecha */
+    cursor: pointer;  /* ✅ Hace que parezca clickeable */
+  }
   
