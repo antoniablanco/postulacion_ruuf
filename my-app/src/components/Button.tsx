@@ -1,7 +1,25 @@
-import "../styles/buttons.css";  // ✅ Importamos solo los estilos de los botones
+import React from "react";
 
-const Button = ({ text }: { text: string }) => {
-  return <a className="link-button">{text}</a>;
+interface ButtonProps {
+  children: string;
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark";
+  onClick: () => void;
+}
+
+const Button = ({ children, color = "primary", onClick }: ButtonProps) => {
+  return (
+    <button className={"btn btn-" + color} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

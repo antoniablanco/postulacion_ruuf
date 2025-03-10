@@ -1,9 +1,19 @@
+import { useState } from "react";
+
+import Alert from "../components/Alert";
+import Button from "../components/Button";
+
 export default function About() {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-        <h1 className="text-3xl font-bold text-green-600">ℹ️ Sobre Nosotros</h1>
-        <p className="text-gray-600">Esta es una app hecha con React, Vite y TypeScript.</p>
-      </div>
-    );
-  }
-  
+  const [alertVisible, setAlertVisible] = useState(false);
+
+  return (
+    <div>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisible(false)}>My alert</Alert>
+      )}
+      <Button color="info" onClick={() => setAlertVisible(true)}>
+        My button
+      </Button>
+    </div>
+  );
+}
